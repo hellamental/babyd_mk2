@@ -10,7 +10,7 @@
         <p>
           <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fileModal">
-            Upload a File
+            Upload a Video
             </button>
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#photoModal">
             Upload a Photo
@@ -21,6 +21,18 @@
       </div>
     </div>
   </section>
+
+<!-- Bootstrap video album -->
+<div class = 'container' align="center">
+    {% for item in media_list %}
+      <video class="video-fluid z-depth-1" width="640" height="480" autoplay loop controls muted> 
+      <source src="{{item.uploaded_file.url}}" type="video/mp4" /> 
+      </video>
+    {% endfor %}
+</div>
+
+
+
 
 <!---BOOOTSTRAP ABLUM START -->
 <div class="album py-5 bg-light">
